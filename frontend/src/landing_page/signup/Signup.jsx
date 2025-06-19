@@ -48,7 +48,8 @@ const Signup = () => {
          // navigate("/");
          //window.location.href = `http://localhost:5174?user=${inputValue.email}`
          //window.location.href = `/?user=${inputValue.email}`;
-         navigate('/dashboard');
+         //navigate('/dashboard');
+         window.location.href = `https://zerodha-dashboard-llnr.onrender.com?user=${inputValue.email}`;
         }, 1000);
       } else {
         handleError(message);
