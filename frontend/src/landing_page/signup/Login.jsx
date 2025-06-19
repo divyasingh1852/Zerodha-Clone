@@ -32,7 +32,8 @@ const Login = () => {
     e.preventDefault();
     try {
       const { data } = await axios.post(
-        "http://localhost:3002/login",
+       // "http://localhost:3002/login",
+       `${process.env.REACT_APP_API_URL}/login`,
         {
           ...inputValue,
         },
@@ -44,7 +45,8 @@ const Login = () => {
         handleSuccess(message);
         setTimeout(() => {
           //navigate("/home");
-           window.location.href = `http://localhost:5174?user=${inputValue.email}`
+          // window.location.href = `http://localhost:5174?user=${inputValue.email}`
+          window.location.href = `/?user=${inputValue.email}`;
         }, 1000);
       } else {
         handleError(message);
