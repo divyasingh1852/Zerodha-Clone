@@ -1,0 +1,106 @@
+.signup_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(143, 187, 204, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+.form_container {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 8px 8px 24px rgba(66, 68, 90, 1);
+}
+
+
+.signup_wrapper .form_container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.signup_wrapper .form_container input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white !important;
+  color: black !important;
+
+}
+
+.signup_wrapper .form_container button {
+  background-color: rgba(0, 212, 255, 1);
+  color: white;
+  padding: 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.3rem;
+} 
+
+
+
+
+
+
+
+/* home */
+/* Wrapper for Home Page */
+.home_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(143, 187, 204, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
+
+/* Home Page Container */
+.home_page {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 8px 8px 24px rgba(66, 68, 90, 1);
+  text-align: center;
+  width: 80%;
+  max-width: 600px;
+}
+
+/* Welcome Text */
+.home_page h4 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Username Styling */
+.home_page span {
+  color: rgba(0, 212, 255, 1);
+}
+
+/* Logout Button */
+.home_page button {
+  background-color: rgba(0, 212, 255, 1);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.home_page button:hover {
+  background-color: rgba(2, 0, 36, 1);
+}
+
+
+
+
+
+
+
+
+ 
