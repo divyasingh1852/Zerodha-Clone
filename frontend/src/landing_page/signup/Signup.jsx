@@ -47,7 +47,8 @@ const Signup = () => {
         setTimeout(() => {
          // navigate("/");
          //window.location.href = `http://localhost:5174?user=${inputValue.email}`
-         window.location.href = `/?user=${inputValue.email}`;
+         //window.location.href = `/?user=${inputValue.email}`;
+         navigate('/dashboard');
         }, 1000);
       } else {
         handleError(message);
