@@ -24,7 +24,7 @@ export const GeneralContextProvider = (props) => {
    const [holdings, setHoldings] = useState([]);
 
  useEffect(() => {            //this
-    fetch("http://localhost:3002/allHoldings")
+  fetch(`${process.env.REACT_APP_API_URL}/allHoldings`)
       .then((res) => res.json())
       .then((data) => setHoldings(data))
       .catch((error) => console.error("Error fetching holdings:", error));
