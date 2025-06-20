@@ -29,8 +29,8 @@ const Login = () => {
     });
 
   const handleSubmit = async (e) => {
-     const API = process.env.REACT_APP_API_URL || "http://localhost:3002";
-     console.log("Login API URL:", API);
+    const API = process.env.REACT_APP_API_URL || "https://zerodha-backend-89hl.onrender.com";
+    console.log("Login API URL:", API);
     e.preventDefault();
     try {
       const { data } = await axios.post(

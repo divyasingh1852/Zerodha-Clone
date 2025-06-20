@@ -10,6 +10,8 @@ const Home = () => {
   const navigate = useNavigate();
   const [cookies, removeCookie] = useCookies([]);
   const [username, setUsername] = useState("");
+ const API = process.env.REACT_APP_API_URL || "https://zerodha-backend-89hl.onrender.com";
+
   useEffect(() => {
     console.log("Cookies at Home:", cookies); // Debug cookies
     const verifyCookie = async () => {
@@ -18,7 +20,7 @@ const Home = () => {
       }
       const { data } = await axios.post(
         //"http://localhost:3002",
-        `${process.env.REACT_APP_API_URL}/verify`,
+        `${API}/verify`,
         {},
         { withCredentials: true }
       );
