@@ -18,7 +18,7 @@ const Home = () => {
       }
       const { data } = await axios.post(
         //"http://localhost:3002",
-        `${process.env.REACT_APP_API_URL}/`,
+        `${process.env.REACT_APP_API_URL}/verify`,
         {},
         { withCredentials: true }
       );
