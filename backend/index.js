@@ -310,13 +310,11 @@ app.post('/newOrder', async (req, res) => {
   res.send("Order processed!");
 });
 
-
-app.use(express.static(path.join(__dirname, "client", "dist"))); // or "build" if using CRA
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+  res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
 });
-
 
 
 app.listen(PORT, () => {
