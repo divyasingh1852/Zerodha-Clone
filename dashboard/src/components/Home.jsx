@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Dashboard from "./Dashboard";
@@ -9,24 +9,33 @@ const Home = () => {
   const userEmail = query.get("user");
   const navigate = useNavigate();
 
+  const [authChecked, setAuthChecked] = useState(false);      
+  const [isAuthenticated, setIsAuthenticated] = useState(false); 
   useEffect(() => {
-    axios
-      axios.post(`${process.env.REACT_APP_API_URL}/verify`, {}, { withCredentials: true })
-      .then((res) => {
-        if (!res.data.status) {
+  const API = process.env.REACT_APP_API_URL || "https://zerodha-backend-89hl.onrender.com";
+
+  axios.post(`${API}/verify`, {}, { withCredentials: true })
+    .then((res) => {
+     if (res.data.status) {
+          setIsAuthenticated(true);                           
+        } else {
           navigate("/login");
         }
-      })
-      .catch((err) => {
-        console.error("Verification failed:", err);
-        navigate("/login");
+    })
+    .catch((err) => {
+      console.error("Verification failed:", err);
+      navigate("/login");
+    })
+    .finally(() => {
+        setAuthChecked(true);                               
       });
-  }, [navigate]);
+}, [navigate]);
 
+ if (!authChecked) return <p>Checking login...</p>; 
   return (
     <>
       <TopBar />
-      <Dashboard userEmail={userEmail} />
+      {isAuthenticated && <Dashboard userEmail={userEmail} />} 
     </>
   );
 };

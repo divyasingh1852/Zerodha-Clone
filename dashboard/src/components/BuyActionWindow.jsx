@@ -14,11 +14,12 @@ const BuyActionWindow = ({ uid }) => {
 
 
   const handleBuyClick = () => {
-    axios.post(`${process.env.REACT_APP_API_URL}/newOrder`, {
+    axios.post(`${process.env.REACT_APP_API_URL || "https://zerodha-backend-89hl.onrender.com"}/newOrder`, {
       name: uid,
       qty: stockQuantity,
       price: stockPrice,
       mode: "BUY",
+
     });
 
     

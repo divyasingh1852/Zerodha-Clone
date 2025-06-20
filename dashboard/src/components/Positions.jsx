@@ -8,8 +8,11 @@ const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
 
  useEffect(() => {
-  const API = process.env.REACT_APP_API_URL || "http://localhost:3002";
-  console.log("Positions API URL:", API);
+  const API =
+      process.env.REACT_APP_API_URL ||
+      "https://zerodha-backend-89hl.onrender.com";
+    console.log("Positions API URL:", API);
+
 
   axios
     .get(`${API}/allPositions`, { withCredentials: true })

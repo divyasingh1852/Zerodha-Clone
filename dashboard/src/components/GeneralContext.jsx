@@ -23,12 +23,13 @@ export const GeneralContextProvider = (props) => {
   const [selectedSellStockUID, setSelectedSellStockUID] = useState("");
    const [holdings, setHoldings] = useState([]);
 
- useEffect(() => {            //this
-  fetch(`${process.env.REACT_APP_API_URL}/allHoldings`)
-      .then((res) => res.json())
-      .then((data) => setHoldings(data))
-      .catch((error) => console.error("Error fetching holdings:", error));
-  }, []);
+ const API = process.env.REACT_APP_API_URL || "https://zerodha-backend-89hl.onrender.com";
+useEffect(() => {
+  fetch(`${API}/allHoldings`)
+    .then((res) => res.json())
+    .then((data) => setHoldings(data))
+    .catch((error) => console.error("Error fetching holdings:", error));
+}, []);
 
   const handleOpenBuyWindow = (uid) => {
     setIsBuyWindowOpen(true);

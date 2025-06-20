@@ -9,11 +9,12 @@ import GeneralContext from "./GeneralContext";
 const Holdings = () => {
   const { holdings, setHoldings } = useContext(GeneralContext); // Access holdings from context  //this
   const [allHoldings, setAllHoldings] = useState([]);
+  const API = process.env.REACT_APP_API_URL || "https://zerodha-backend-89hl.onrender.com";
 
-  useEffect(() => {
-    console.log("API URL:", process.env.REACT_APP_API_URL); 
+useEffect(() => {
+  console.log("API URL:", API);
   axios
-    .get(`${process.env.REACT_APP_API_URL}/allHoldings`)
+    .get(`${API}/allHoldings`)
     .then((res) => {
       if (Array.isArray(res.data)) {
         setHoldings(res.data);
@@ -25,7 +26,7 @@ const Holdings = () => {
     .catch((err) => {
       console.error("Error fetching holdings:", err);
     });
-  }, []);
+}, []);
 
 
 
