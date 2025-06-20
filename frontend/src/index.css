@@ -127,7 +127,7 @@ button:focus-visible {
 
 
 
-/* Mobile responsiveness and layout fix */
+
 @media (max-width: 768px) {
   html, body {
     margin: 0;
@@ -135,6 +135,7 @@ button:focus-visible {
     font-size: 90%;
     overflow-x: hidden;
     background-color: white;
+    box-sizing: border-box;
   }
 
   #root, .container, .section, .card {
@@ -146,6 +147,7 @@ button:focus-visible {
   h1, h2 {
     text-align: center;
     line-height: 1.2;
+    word-break: break-word;
   }
 
   h1 {
@@ -161,20 +163,26 @@ button:focus-visible {
     font-size: 1rem;
   }
 
-  button {
-    width: 100%;
-    font-size: 1rem;
-    padding: 0.75rem 1.25rem;
-    white-space: nowrap;
-    overflow: visible;
-    text-overflow: clip;
-  }
-
   .nav-link {
     font-size: 1rem;
     margin: 0.5rem 0;
     display: block;
     text-align: left;
+  }
+
+  button {
+    display: inline-block;
+    width: 100%;
+    min-width: 140px;
+    max-width: 100%;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: unset;
+    line-height: 1.2;
+    box-sizing: border-box;
+    text-align: center;
   }
 
   #supportWrapper1,
@@ -188,6 +196,20 @@ button:focus-visible {
     font-size: 16px;
     padding: 0.8rem;
     width: 100%;
+    box-sizing: border-box;
+  }
+
+  .trust-text {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    word-break: break-word;
+    font-size: 1rem;
+    line-height: 1.4;
+    box-sizing: border-box;
   }
 
   /* Hide any accidental overlays or shadows */
