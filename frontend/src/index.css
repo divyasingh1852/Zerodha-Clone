@@ -122,3 +122,68 @@ button:focus-visible {
 
 
 
+
+
+
+
+
+
+/*  Mobile responsiveness adjustments (max-width: 768px) */
+@media (max-width: 768px) {
+  html {
+    font-size: 90%;
+  }
+
+  h1 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  button {
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+    width: 100%;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    display: block;
+  }
+
+  #supportWrapper1,
+  #supportWrapper2 {
+    flex-direction: column;
+    margin: 1rem;
+    gap: 1rem;
+  }
+
+  #supportWrapper2 input {
+    font-size: 16px;
+    padding: 0.8rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
