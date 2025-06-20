@@ -21,7 +21,12 @@ const app = express();
 
 app.use(cors({
   //origin: 'http://localhost:5174', // or your frontend URL 5173
-   origin: ['http://localhost:5173', 'http://localhost:5174', 'https://zerodha-frontend-0dxv.onrender.com'],
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:5174',
+    'https://zerodha-frontend-0dxv.onrender.com',
+    'https://zerodha-dashboard-llnr.onrender.com'
+  ],
   credentials: true
 }));
 
