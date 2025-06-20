@@ -313,9 +313,10 @@ app.post('/newOrder', async (req, res) => {
 
 app.use(express.static(path.join(__dirname, "client", "dist"))); // or "build" if using CRA
 
-app.get("*", (req, res) => {
+app.get("/:catchAll(*)", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
 });
+
 
 
 
