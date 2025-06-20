@@ -11,10 +11,19 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
-  axios.get(`${process.env.REACT_APP_API_URL}/allHoldings`).then((res) => {
-  setHoldings(res.data);
-  setAllHoldings(res.data);
-});
+  axios
+    .get(`${process.env.REACT_APP_API_URL}/allHoldings`)
+    .then((res) => {
+      if (Array.isArray(res.data)) {
+        setHoldings(res.data);
+        setAllHoldings(res.data);
+      } else {
+        console.error("Expected array, got:", res.data);
+      }
+    })
+    .catch((err) => {
+      console.error("Error fetching holdings:", err);
+    });
   }, []);
 
 
