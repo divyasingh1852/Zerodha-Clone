@@ -310,6 +310,13 @@ app.post('/newOrder', async (req, res) => {
   res.send("Order processed!");
 });
 
+// Test route to verify server is running
+app.get("/test", (req, res) => {
+  res.send("Server is running ✅");
+});
+
+
+
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 app.get("/*", (req, res) => {
