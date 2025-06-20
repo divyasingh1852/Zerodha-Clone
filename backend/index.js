@@ -5,7 +5,6 @@ const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const cookieParser = require("cookie-parser");
-const path = require("path");
 const authRoute = require("./Routes/AuthRoute");
 
 
@@ -312,16 +311,9 @@ app.post('/newOrder', async (req, res) => {
 
 // Test route to verify server is running
 app.get("/test", (req, res) => {
-  res.send("Server is running ✅");
+  res.send("Server is running");
 });
 
-
-
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
-
-app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
-});
 
 
 app.listen(PORT, () => {
