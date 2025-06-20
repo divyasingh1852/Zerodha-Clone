@@ -11,7 +11,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .post("/verify", {}, { withCredentials: true })
+      axios.post(`${process.env.REACT_APP_API_URL}/verify`, {}, { withCredentials: true })
       .then((res) => {
         if (!res.data.status) {
           navigate("/login");
