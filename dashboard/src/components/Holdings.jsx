@@ -11,6 +11,7 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
+    console.log("API URL:", process.env.REACT_APP_API_URL); 
   axios
     .get(`${process.env.REACT_APP_API_URL}/allHoldings`)
     .then((res) => {
