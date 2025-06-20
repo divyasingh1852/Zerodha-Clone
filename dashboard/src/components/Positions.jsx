@@ -7,9 +7,12 @@ import { VerticalGraph } from "./VerticalGraph";
 const Positions = () => {
   const [allPositions, setAllPositions] = useState([]);
 
-  useEffect(() => {
+ useEffect(() => {
+  const API = process.env.REACT_APP_API_URL || "http://localhost:3002";
+  console.log("Positions API URL:", API);
+
   axios
-    .get(`${process.env.REACT_APP_API_URL}/allPositions`)
+    .get(`${API}/allPositions`, { withCredentials: true })
     .then((res) => {
       if (Array.isArray(res.data)) {
         setAllPositions(res.data);
