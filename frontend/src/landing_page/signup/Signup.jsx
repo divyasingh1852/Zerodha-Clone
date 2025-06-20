@@ -31,6 +31,8 @@ const Signup = () => {
     });
 
   const handleSubmit = async (e) => {
+     const API = process.env.REACT_APP_API_URL || "http://localhost:3002";
+     console.log("Signup API URL:", API);
     e.preventDefault();
     try {
       const { data } = await axios.post(
