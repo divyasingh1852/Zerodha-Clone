@@ -127,30 +127,75 @@ button:focus-visible {
 
 
 
-
+/* Mobile responsiveness and layout fix */
 @media (max-width: 768px) {
-  html, body, #root {
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 90%;
+    overflow-x: hidden;
+    background-color: white;
+  }
+
+  #root, .container, .section, .card {
     background-color: white !important;
+    box-shadow: none !important;
     overflow-x: hidden;
   }
 
-  /* Hide unwanted overlays or shadows */
-  .offcanvas-backdrop,
-  .modal-backdrop,
-  .shadow,
+  h1, h2 {
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+    font-size: 1rem;
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem 1.25rem;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    display: block;
+    text-align: left;
+  }
+
+  #supportWrapper1,
+  #supportWrapper2 {
+    flex-direction: column;
+    margin: 1rem;
+    gap: 1rem;
+  }
+
+  #supportWrapper2 input {
+    font-size: 16px;
+    padding: 0.8rem;
+    width: 100%;
+  }
+
+  /* Hide any accidental overlays or shadows */
   .overlay,
-  .backdrop {
+  .backdrop,
+  .offcanvas-backdrop,
+  .modal-backdrop {
     display: none !important;
     background: none !important;
   }
-
-  .card, .container, .section {
-    box-shadow: none !important;
-    background-color: white !important;
-  }
 }
-
-
-
-
-
