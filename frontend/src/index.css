@@ -128,19 +128,27 @@ button:focus-visible {
 
 
 
+
 /*  Mobile responsiveness adjustments (max-width: 768px) */
 @media (max-width: 768px) {
   html {
     font-size: 90%;
   }
 
+  body {
+    padding: 1rem;
+    overflow-x: hidden;
+  }
+
   h1 {
     font-size: 2rem;
     text-align: center;
+    line-height: 1.2;
   }
 
   h2 {
     font-size: 1.5rem;
+    text-align: center;
   }
 
   .card {
@@ -158,6 +166,7 @@ button:focus-visible {
     font-size: 1rem;
     margin: 0.5rem 0;
     display: block;
+    text-align: left;
   }
 
   #supportWrapper1,
@@ -170,13 +179,14 @@ button:focus-visible {
   #supportWrapper2 input {
     font-size: 16px;
     padding: 0.8rem;
+    width: 100%;
   }
 }
 
 
 
 
-
+ 
 
 
 
